@@ -94,9 +94,9 @@ unsigned char keypad_to_ascii(void)
 //     }
 // }
 
-void keyboard_init(char init_lcd) {
+void keyboard_init(char init_twi) {
     // TWI init
-    if (init_lcd) twi_init();
+    if (init_twi) twi_init();
     // Keyboard init
     PCA9555_0_write(REG_CONFIGURATION_1, 0xF0); // IO1_0-IO1_3 output, IO1_4-IO1_7 input
 }

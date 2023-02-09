@@ -14,7 +14,7 @@
 
 // Must be used ONLY when ADC interrupts are disabled
 uint16_t raw_adc_data(void) {
-    ADCSRA |= 1 << ADSC;        //start ADC conversion    
+    ADCSRA |= 1 << ADSC;        //start ADC conversion
     while((ADCSRA >> ADSC)&1);  //wait for it to finish
     return ADC;
 }

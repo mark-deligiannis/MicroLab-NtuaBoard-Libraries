@@ -17,7 +17,7 @@
 #include <util/delay.h>
 #include "twi.h"
 
-#if LCD_MODE 1
+#if LCD_MODE == 1
 #define LCD_PRIM_WRITE(X) ( PCA9555_0_write(REG_OUTPUT_0, X) )
 #define LCD_PRIM_READ() ( PCA9555_0_read(0) )
 #define LCD_LOGIC_OR(X) ( PCA9555_0_write_or(X) )
@@ -104,10 +104,10 @@ void clear_and_reset_cursor() {
 }
 
 // Full initialization of LCD to 2-line mode, no extra commands needed
-void lcd_full_init (char init_lcd) {
+void lcd_full_init (char init_twi) {
     // If we do the job via the port expander initialize twi
     if (LCD_MODE == 1) {
-        if (init_lcd) twi_init();
+        if (init_twi) twi_init();
         PCA9555_0_write(REG_CONFIGURATION_0, 0x00); // Set EXT_PORT0 as output
     }
     else {
