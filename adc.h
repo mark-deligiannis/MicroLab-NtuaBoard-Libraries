@@ -28,6 +28,7 @@ void adc_init(char adc_channel, char int_enabled, char trigger_source) {
     ADCSRA = 0b10000111;                //prescaler 128
     ADCSRB = trigger_source;            //trigger_source
     if (int_enabled) ADCSRA |= 1<<ADIE; //enable interrupts if the user wants it
+    if (trigger_source) ADCSRA |= 1<<ADATE;
 }
 
 #endif /* adc.h */
