@@ -1,3 +1,12 @@
+/* KEYBOARD
+ *
+ * Initialize with keyboard_init
+ * Uses TWI for communication
+ * No ports used
+ * 
+ */
+
+
 #ifndef KEYBOARD_H__
 #define KEYBOARD_H__
 
@@ -84,5 +93,12 @@ unsigned char keypad_to_ascii(void)
 //         else if (key=='#') state = 0;
 //     }
 // }
+
+void keyboard_init(char init_lcd) {
+    // TWI init
+    if (init_lcd) twi_init();
+    // Keyboard init
+    PCA9555_0_write(REG_CONFIGURATION_1, 0xF0); // IO1_0-IO1_3 output, IO1_4-IO1_7 input
+}
 
 #endif /* keyboard.h */

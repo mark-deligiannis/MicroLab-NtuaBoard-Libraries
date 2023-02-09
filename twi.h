@@ -1,3 +1,11 @@
+/* TWO WIRE INTERFACE (TWI)
+ *
+ * Initialize with twi_init()
+ * No PORTS used
+ * 
+ */
+
+
 #ifndef TWI_H__
 #define TWI_H__
 
