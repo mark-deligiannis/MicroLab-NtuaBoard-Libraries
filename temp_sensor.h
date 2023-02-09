@@ -5,20 +5,12 @@
  * 
  */
 
-
-
 #ifndef TEMP_SENSOR_H__
 #define TEMP_SENSOR_H__
 
 #include <avr/io.h>
 #include <xc.h>
 #include <util/delay.h>
-
-
-/*
- * ONE WIRE COMMUNICATION ===========================================
- */
-
 
 char one_wire_reset() {
     DDRD = (1 << PD4);      //set PD4 as output

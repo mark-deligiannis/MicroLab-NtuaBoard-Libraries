@@ -110,6 +110,9 @@ void lcd_full_init (char init_lcd) {
         if (init_lcd) twi_init();
         PCA9555_0_write(REG_CONFIGURATION_0, 0x00); // Set EXT_PORT0 as output
     }
+    else {
+        DDRD = 0xff;
+    }
     // Initialize LCD
     lcd_init();
     _delay_ms(2);
