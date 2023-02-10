@@ -5,7 +5,7 @@
  * `#define LCD_MODE` to 0 for PORTD and 1 for TWI. Default is PORTD
  * 
  * Added `lcd_full_init` and `clear_and_reset_cursor`
- * 
+ * PORTS: PC4-5 for TWI
  */
 
 

@@ -1,7 +1,7 @@
 /* TWO WIRE INTERFACE (TWI)
  *
  * Initialize with twi_init()
- * No PORTS used
+ * Ports: PC4-5
  * 
  */
 

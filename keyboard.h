@@ -2,7 +2,7 @@
  *
  * Initialize with keyboard_init
  * Uses TWI for communication
- * No ports used
+ * Ports: PC4-5 for TWI
  * 
  */
 
